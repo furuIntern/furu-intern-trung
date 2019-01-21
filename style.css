@@ -1,3 +1,52 @@
+*{
+    margin:0;
+    padding:0;
+}
+.container{
+    width: 70%;
+}
 #bootstrapLogo{
-    width: 20%;
+    display: block;
+    width: 60px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.title{
+    margin: 30px 0px;
+    font-size: 20px;
+    text-align: center;
+}
+div h1{
+    font-size: 30px;
+}
+.name{
+    width: 50%;
+    float: left;
+
+}
+input[type = text]{
+    width: 100%;
+}
+
+.fninput{
+    width: 90% !important;
+}
+table{
+    width: 100%;
+}
+select{
+    width: 90%;
+}
+.country{
+    width: 40%;
+    float: left;
+}
+.state{
+    width: 35%;
+    float: left;
+}
+.zip{
+    width: 25%;
+    float: left;
 }
