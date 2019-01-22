@@ -1,11 +1,20 @@
 
 function check(){
-    var x = document.getElementsByClassName("name");
-    for (var j = 0; j < x.length; j++){
-        var y = x[j].getElementsByTagName("INPUT");
-        for (var i = 0; i < y.length; i++){
-            if(y[i].getAttribute("type") == "text" )
-            y[i].style.borderColor = (y[i].value != "" ? "green" : "red");
-        }
+    var a = document.getElementById("form");
+    for (var i = 0; i < a.getElementsByTagName("INPUT").length; i++){
+        a.getElementsByTagName("INPUT")[i].style.borderColor = a.getElementsByTagName("INPUT")[i].value != "" ? "green" : "red"
     }    
+    var b = document.getElementsByTagName("SELECT");
+    for (var i = 0; i < b.length ; i++){
+        if(b[i].options[b[i].selectedIndex].text == "Choose..."){
+            b[i].style.borderColor = "red";
+        }else{
+            b[i].style.borderColor = "green";
+        }
+    }
+    var c = document.getElementsByClassName("unrequired");
+    for(var i = 0; i < c.length; i++){
+        c[i].style.borderColor = "green";
+    }
+
 }
