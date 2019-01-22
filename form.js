@@ -2,7 +2,11 @@
 function check(){
     var a = document.getElementById("form");
     for (var i = 0; i < a.getElementsByTagName("INPUT").length; i++){
-        a.getElementsByTagName("INPUT")[i].style.borderColor = a.getElementsByTagName("INPUT")[i].value != "" ? "green" : "red"
+        if(a.getElementsByTagName("INPUT")[i].value == ""){
+            a.getElementsByTagName("INPUT")[i].style.borderColor = "red";
+            a.getElementsByTagName("INPUT")[i].style.borderWidth = "2px";
+        }
+        
     }    
     var b = document.getElementsByTagName("SELECT");
     for (var i = 0; i < b.length ; i++){
@@ -11,6 +15,7 @@ function check(){
         }else{
             b[i].style.borderColor = "green";
         }
+        b[i].style.borderWidth = "2px";
     }
     var c = document.getElementsByClassName("unrequired");
     for(var i = 0; i < c.length; i++){
