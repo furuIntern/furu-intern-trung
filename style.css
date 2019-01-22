@@ -50,3 +50,12 @@ select{
     width: 25%;
     float: left;
 }
+.line{
+    margin-top: 15px;
+    border-top: 1px solid gray;
+    padding-top: 15px ;
+}
+form{
+    width: 60%;
+    float: left;
+}
