@@ -1,31 +1,42 @@
 
 function check(){
-    var a = document.getElementById("form");
-    var d = a.getElementsByClassName("alert");
-    var x = 0;
-    for (var i = 0; i < a.getElementsByTagName("INPUT").length; i++){
-        a.getElementsByTagName("INPUT")[i].style.borderWidth = "2px";
-        if( a.getElementsByTagName("INPUT")[i].getAttribute("class") !="unrequired" &&  a.getElementsByTagName("INPUT")[i].getAttribute("type") == "text"){
-                if(a.getElementsByTagName("INPUT")[i].value == ""){
-                a.getElementsByTagName("INPUT")[i].style.borderColor = "red";
-                d[x].textContent = "This is required";
-                } else {
-                    a.getElementsByTagName("INPUT")[i].style.borderColor = "green";
-                    d[x].textContent = "";
-                }
-                x++;
-        } else{
-            a.getElementsByTagName("INPUT")[i].style.borderColor = "green";
+    var form = document.getElementById("form");
+    var required = form.getElementsByClassName("required");
+    var alert = form.getElementsByClassName("alert");
+    for (var i= 0; i < required.length;i++){
+        if(required[i].value.trim() == 0){
+            alert[i].textContent = "This is required";
+            required[i].style.borderColor = "red";
+        }else{
+            alert[i].textContent = "";
+            required[i].style.borderColor = "green";
+        }
+    }
+    var address2 = document.getElementById("address2");
+    address2.style.borderColor = "green";
+    var select = document.getElementsByTagName('select');
+    for(var i = 0; i < select.length; i++){
+        if(select[i].value == 'unchoiced'){
+            select[i].style.borderColor= 'red';
+        } else {
+            select[i].style.borderColor= 'green';
         }
     }    
-    var b = document.getElementsByTagName("SELECT");
-    for (var i = 0; i < b.length ; i++){
-        if(b[i].options[b[i].selectedIndex].text == "Choose..."){
-            b[i].style.borderColor = "red";
-        }else{
-            b[i].style.borderColor = "green";
-        }
-        b[i].style.borderWidth = "2px";
+    /**Check email by email expression */
+    var email = document.getElementById("email");
+    var alertEm = document.getElementById("email-alert");
+    var emex = /^[a-z].+@[a-z 0-9]{2,}(\.[a-z 0-9]{2,})+$/i;
+    if(emex.test(email.value)){
+        email.style.borderColor = "green";
+        alertEm.textContent = "";
+    }else{
+        email.style.borderColor = "red";
+        alertEm.textContent = "This is required";
     }
-    a.addEventListener("keydown",check);
+}
+function start(){
+    check();
+    var form = document.getElementById("form");
+    form.addEventListener("keydown",check);
+    form.addEventListener("change",check);
 }

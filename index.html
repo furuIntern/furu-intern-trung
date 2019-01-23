@@ -20,83 +20,95 @@
         <h3>Billing address</h3>
         <div class = "name">
             <div>First name</div>
-            <input class ="fninput" type="text">
+            <input class ="fninput required" type="text">
             <div class="alert" style="padding-left : 5px; color:red;"></div>
         </div>
         <div class = "name">
                 <div>Last name</div>
-                <input type="text">
+                <input type="text" class="required">
                 <div class="alert" style="padding-left : 5px; color:red;"></div>
         </div>
         <div>Username</div>
-        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Username" class="required">
         <div class="alert" style="padding-left : 5px; color:red;"></div>
         <div >Email</div>
-        <input class="unrequired" type="text" placeholder="you@example.com">
+        <input id="email" type="text" placeholder="you@example.com">
+        <div id= "email-alert" style="padding-left : 5px; color:red;"></div>
         <div>Address</div>
-        <input type="text" placeholder="1234 Main St">
+        <input type="text" class="required" placeholder="1234 Main St">
         <div class="alert" style="padding-left : 5px; color:red;"></div>
         <div >Address 2</div>
-        <input class="unrequired" type="text" placeholder="Apartment or suit">
+        <input id="address2" type="text" placeholder="Apartment or suit">
         <div class = "country">
             <div>Country</div>
             <select name="#" id="#">
-                <option value="#">Choose...</option>
+                <option value="unchoiced">Choose...</option>
                 <option value="#">United State</option>
             </select>
         </div>
         <div class = "state">
                 <div>State</div>
                 <select name="#" id="#">
-                    <option value="#">Choose...</option>
+                    <option value="unchoiced">Choose...</option>
                     <option value="#">California</option>
                 </select>
             </div>
         <div class = "zip">
                 <div>Zip</div>
-                <input type="text">
+                <input type="text" class="required">
                 <div class="alert" style="padding-left : 5px; color:red;"></div>
         </div>
         <div style ="clear: both"></div>
         <div class="line">
-            <input type="checkbox" >Shipping address is the same as my billing address<br>
-            <input type="checkbox" >Save this information for next time 
+            <label >
+                <input type="checkbox" >Shipping address is the same as my billing
+            </label>
+            <label>
+                <input type="checkbox" >Save this information for next time  
+            </label>
+            
         </div>
         <div class="line">
             <h2>Payment</h2>
-            <input type="radio" name="card" checked> Credit card<br>
-            <input type="radio" name="card" > Debit card<br>
-            <input type="radio" name="card" > PayPal <br>
+            <label >
+                <input type="radio" name="card" checked> Credit card
+            </label>
+            <label >
+                <input type="radio" name="card" > Debit card
+            </label>
+            <label>
+                <input type="radio" name="card" > PayPal
+            </label>
             <div style="margin:15px 0px;">
                 <div class = "name">
                     <div>Name on card</div>
-                    <input class ="fninput" type="text">
+                    <input class ="fninput required" type="text">
                     <div class="alert" style="padding-left : 5px; color:red;"></div>
                     <div style="color:grey;">Full name as displayed on card
                     </div>
                     <div style="width : 90%; margin-top: 15px;">
                         <div class = "name" >
                             <div>Expiration</div>
-                            <input class ="fninput" type="text">
+                            <input class ="fninput required" type="text">
                             <div class="alert" style="padding-left : 5px; color:red;"></div>
                         </div>
                         <div class = "name">
                                 <div>CVV</div>
-                                <input type="text">
+                                <input type="text" class="required">
                                 <div class="alert" style="padding-left : 5px; color:red;"></div>
                         </div>
                     </div>
                 </div>
                 <div class = "name">
                         <div>Credit card number</div>
-                        <input type="text">
+                        <input type="text" class="required">
                         <div class="alert" style="padding-left : 5px; color:red;"></div>
                 </div>
             </div> 
         </div>
         <div style="clear:both"></div>
         <div class="line">
-            <input style ="background-color: steelblue; width: 100%;border: white solid 1px; border-radius: 10px ; height : 40px; color: white"type="button" onclick="check()"z value="Continue to checkout">
+            <input style ="background-color: steelblue; width: 100%;border: white solid 1px; border-radius: 10px ; height : 40px; color: white"type="button" onclick="start()"z value="Continue to checkout">
         </div>
     </form>
     <div class = "card">
@@ -130,7 +142,7 @@
         <form action="" style="border : solid grey 1px; width: 100%; height: 50px; border-radius: 10px; margin-top: 20px ">
             <div style="overflow:auto;display: inline-block; position: relative; left: 50%; top:50%; transform: translate(-50%,-50%)">
                 <input type="text" placeholder="Promo code" style="width: 150px; float:left; height: 28px; border-top-right-radius: 0px;border-bottom-right-radius: 0px">
-                <input type="button" value="Redeem" style="float:left; width: 60px; border: none; height: 34px;border-top-right-radius: 10px;border-bottom-right-radius: 10px" >
+                <input type="button" value="Redeem" style="float:left; width: 60px; border: none; height: 34px;border-top-right-radius: 10px;border-bottom-right-radius: 10px; background-color: grey;" >
             </div>
         </form>
     </div>
@@ -141,7 +153,6 @@
         <a href="#">Privacy</a>
         <a href="#">Tern</a>
         <a href="#">Support</a>
-
     </div>
  </div> 
 </body>

@@ -2,6 +2,9 @@
     margin:0;
     padding:0;
 }
+body{
+    background-color: rgb(241, 240, 240);
+}
 .container{
     width: 70%;
     padding-left: 15px;
@@ -61,6 +64,7 @@ select{
     float: left;
 }
 .line{
+    position: relative;
     margin-top: 15px;
     border-top: 1px solid gray;
     padding-top: 15px ;
@@ -99,6 +103,10 @@ a{
     margin: 10px;
 }
 select{
- height: 34px;
+ height: 38px;
  border-radius: 10px; 
+}
+label{
+    display: block;
+    cursor: pointer;
 }
