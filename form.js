@@ -36,7 +36,37 @@ function check(){
 }
 function start(){
     check();
+    resetForm();
     var form = document.getElementById("form");
     form.addEventListener("keydown",check);
     form.addEventListener("change",check);
+}
+function fadeIn(){
+    var container = document.getElementById("container");
+    container.style.opacity = "0";
+    var frames = 0;
+    var run = setInterval(frame,10);
+    function frame(){
+        if(frames == 50){
+            clearInterval(run);
+        } else {
+            frames++;
+            container.style.opacity = frames*2/100;
+            container.style.bottom = 100 - frames*2 + "px";
+        }
+    }
+}
+function resetForm(){
+    var form = document.getElementById("form");
+    var frames = 0;
+    var run = setInterval(frame,5);
+    function frame(){
+        if(frames == 100){
+            clearInterval(run);
+        } else {
+            frames++;
+            form.style.opacity = frames/100;
+            form.style.transform = "translateY(-"+(10-frames/10)+"%)";
+        }
+    }
 }
