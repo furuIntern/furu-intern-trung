@@ -1,12 +1,22 @@
 
 function check(){
     var a = document.getElementById("form");
+    var d = a.getElementsByClassName("alert");
+    var x = 0;
     for (var i = 0; i < a.getElementsByTagName("INPUT").length; i++){
-        if(a.getElementsByTagName("INPUT")[i].value == ""){
-            a.getElementsByTagName("INPUT")[i].style.borderColor = "red";
-            a.getElementsByTagName("INPUT")[i].style.borderWidth = "2px";
+        a.getElementsByTagName("INPUT")[i].style.borderWidth = "2px";
+        if( a.getElementsByTagName("INPUT")[i].getAttribute("class") !="unrequired" &&  a.getElementsByTagName("INPUT")[i].getAttribute("type") == "text"){
+                if(a.getElementsByTagName("INPUT")[i].value == ""){
+                a.getElementsByTagName("INPUT")[i].style.borderColor = "red";
+                d[x].textContent = "This is required";
+                } else {
+                    a.getElementsByTagName("INPUT")[i].style.borderColor = "green";
+                    d[x].textContent = "";
+                }
+                x++;
+        } else{
+            a.getElementsByTagName("INPUT")[i].style.borderColor = "green";
         }
-        
     }    
     var b = document.getElementsByTagName("SELECT");
     for (var i = 0; i < b.length ; i++){
@@ -17,9 +27,5 @@ function check(){
         }
         b[i].style.borderWidth = "2px";
     }
-    var c = document.getElementsByClassName("unrequired");
-    for(var i = 0; i < c.length; i++){
-        c[i].style.borderColor = "green";
-    }
-
+    a.addEventListener("keydown",check);
 }
