@@ -23,7 +23,7 @@ $(document).ready(function () {
         $("#address2").addClass("border-success");
         $("#email").toggleClass('border-success',emailEx.test($("#email").val().trim()));
         $("#email").toggleClass('border-danger',!emailEx.test($("#email").val().trim()));
-        $("#email").next('div').toggleClass('d-none', $('#email').val().trim() != '');
+        $("#email").next('div').toggleClass('d-none', emailEx.test($(this).val().trim()));
         $("#email").keyup(function(){
             console.log(emailEx.test($(this).val().trim()));
             $(this).toggleClass('border-success',emailEx.test($(this).val().trim()));
