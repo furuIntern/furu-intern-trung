@@ -8,7 +8,7 @@ $(document).ready(function () {
     $('form>div').addClass('my-3');
     $("form input[type='text']+div").addClass("text-danger d-none");
     $("#submit").click(function () {
-        $('form').css("display",'none');
+        $('form').css("display", 'none');
         $('form').fadeIn();
         $("form input[type='text'][id !='email'][id !='address2']").each(function () {
             $(this).next('div').toggleClass('d-none', $(this).val().trim() != '');
@@ -21,14 +21,25 @@ $(document).ready(function () {
             $(this).toggleClass('border-danger', $(this).val().trim() == '');
         });
         $("#address2").addClass("border-success");
-        $("#email").toggleClass('border-success',emailEx.test($("#email").val().trim()));
-        $("#email").toggleClass('border-danger',!emailEx.test($("#email").val().trim()));
-        $("#email").next('div').toggleClass('d-none', emailEx.test($(this).val().trim()));
-        $("#email").keyup(function(){
+        var emailExval = emailEx.test($("#email").val().trim());
+        $("#email").toggleClass('border-success', emailExval);
+        $("#email").toggleClass('border-danger', !emailExval);
+        $("#email").next('div').toggleClass('d-none', emailExval);
+        $("#email").keyup(function () {
             console.log(emailEx.test($(this).val().trim()));
-            $(this).toggleClass('border-success',emailEx.test($(this).val().trim()));
-            $(this).toggleClass('border-danger',!emailEx.test($(this).val().trim()));
+            $(this).toggleClass('border-success', emailEx.test($(this).val().trim()));
+            $(this).toggleClass('border-danger', !emailEx.test($(this).val().trim()));
             $(this).next('div').toggleClass('d-none', emailEx.test($(this).val().trim()));
+        })
+        $('select').each(function () {
+            var val = $(this).val() == 'unchoiced';
+            $(this).toggleClass('border-success', !val);
+            $(this).toggleClass('border-danger', val);
+        });
+        $('select').change(function () {
+            var val = $(this).val() == 'unchoiced';
+            $(this).toggleClass('border-success', !val);
+            $(this).toggleClass('border-danger', val);
         })
     });
 
