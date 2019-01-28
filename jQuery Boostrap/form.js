@@ -26,7 +26,6 @@ $(document).ready(function () {
         $("#email").toggleClass('border-danger', !emailExval);
         $("#email").next('div').toggleClass('d-none', emailExval);
         $("#email").keyup(function () {
-            console.log(emailEx.test($(this).val().trim()));
             $(this).toggleClass('border-success', emailEx.test($(this).val().trim()));
             $(this).toggleClass('border-danger', !emailEx.test($(this).val().trim()));
             $(this).next('div').toggleClass('d-none', emailEx.test($(this).val().trim()));
