@@ -15,7 +15,7 @@ if ($a == 0){
     if($delta < 0){
         echo 'None result';
     }else{
-        echo 'xs = '. (-1*$b+sqrt($delta))/(2*$a);
+        echo 'x = '. (-1*$b+sqrt($delta))/(2*$a);
         if($delta > 0 ){
             echo ' or '. (-1*$b-sqrt($delta))/(2*$a);
         }
