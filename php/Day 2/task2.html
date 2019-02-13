@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class='container w-50'>
+            <div class='text-center my-3'>
+                <h3>Your Information</h3>
+            </div>
+            <form action="view.php" method="POST">
+            <lable for='name'>Name</lable>
+            <input type='text' name='name' id='name' class='form-control'>
+            <lable for='phonenum'>Phone number</lable>
+            <input type='text' name='phonenum' id='phonenum' class='form-control'>
+            <lable for='id'>ID</lable>
+            <input type='text' name='id' id='id' class='form-control'>
+            <lable for='address'>Address</lable>
+            <input type='text' name='address' id='address' class='form-control'>
+            <lable for='email'>Email</lable>
+            <input type='text' name='email' id='email' class='form-control'>
+            <div>Gender</div>
+            <select class="form-control" name='gender'>
+                <option></option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <lable for='note'>Note</lable>
+            <input type='text' id='note' name='note' class='form-control'>
+            <input type="submit" value="Submit" class='btn btn-primary btn-block my-4'>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
