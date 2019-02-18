@@ -11,19 +11,20 @@
     <div class="container text-center">
         <?php
             $arr = [
-                [0,0,4,0],
-                [0,3,5,0],
-                [5,0,7,6],
-                [1,2,3,0]
+                [1,1,1,0],
+                [0,5,0,1],
+                [2,1,3,10]
             ];
             $sum = 0;
             echo("<h3>Your matrix</h3>");
-            foreach($arr as $y => $arrx) {
-                foreach($arrx as $x => $val) {
-                    if(!(isset($arr[$y-1][$x])&&$arr[$y-1][$x] ==0)){
-                        $sum = $sum + $val;
+            for($y=0; $y< sizeof($arr); $y++) {
+                for($x = 0; $x < sizeof($arr[0]);$x++) {
+                    echo($arr[$y][$x].' ');
+                    if(!(isset($arr[$y-1][$x])&&$arr[$y-1][$x] == 0)){
+                        $sum = $sum + $arr[$y][$x];
+                    } else {
+                        $arr[$y][$x] = 0;
                     }
-                    echo($val.' ');
                 }
                 echo '<br/>';
             }
